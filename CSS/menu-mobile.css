@@ -1,0 +1,76 @@
+.menu-btn{
+  display: none;
+  position: relative;
+  width: 36px; height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.menu-btn span{
+  position: absolute;
+  left: 8px; right: 8px;
+  height: 2px;
+  background: var(--header-texto-forte);
+  border-radius: 2px;
+  transition: transform var(--duracao) var(--suave), opacity var(--duracao) var(--suave);
+}
+.menu-btn span:nth-child(1){ top: 12px; }
+.menu-btn span:nth-child(2){ top: 17px; }
+.menu-btn span:nth-child(3){ top: 22px; }
+.menu-btn.is-active span:nth-child(1){ transform: translateY(5px) rotate(45deg); }
+.menu-btn.is-active span:nth-child(2){ opacity: 0; }
+.menu-btn.is-active span:nth-child(3){ transform: translateY(-5px) rotate(-45deg); }
+
+.menu-overlay{
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: var(--overlay);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--duracao) var(--suave);
+}
+.menu-overlay.is-open{ opacity: 1; pointer-events: auto; }
+
+.menu-mobile{
+  position: fixed;
+  top: 62px; left: 20px; right: 20px;
+  z-index: 45;
+  padding: 12px;
+  border-radius: var(--raio);
+  background: var(--painel-bg);
+  border: 1px solid var(--borda);
+  box-shadow: 0 20px 60px var(--sombra);
+  backdrop-filter: var(--glass-filter-forte);
+  -webkit-backdrop-filter: var(--glass-filter-forte);
+  opacity: 0;
+  transform: translateY(-12px) scale(0.98);
+  pointer-events: none;
+  transition: opacity var(--duracao) var(--suave), transform var(--duracao) var(--suave);
+}
+.menu-mobile.is-open{ opacity: 1; transform: none; pointer-events: auto; }
+
+.menu-mobile nav{ display: flex; flex-direction: column; }
+.menu-mobile a{
+  display: block;
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 14px 16px;
+  border-radius: 12px;
+  transition: background var(--duracao) var(--suave);
+}
+.menu-mobile a:hover, .menu-mobile a:focus-visible{ background: var(--realce); }
+.menu-mobile .btn-primary{
+  margin-top: 6px;
+  text-align: center;
+  color: var(--botao-texto);   /* sem isso, a regra ".menu-mobile a" deixa o texto da cor do fundo */
+}
+.menu-mobile .btn-primary:hover,
+.menu-mobile .btn-primary:focus-visible{ background: var(--botao-hover); }
+
+body.menu-aberto{ overflow: hidden; }
+
+@media (min-width: 861px){
+  .menu-overlay, .menu-mobile{ display: none; }
+}

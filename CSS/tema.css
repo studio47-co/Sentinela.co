@@ -1,0 +1,163 @@
+/* ============================================================
+   TEMAS / PALETA
+   ============================================================
+   Todas as cores do site vêm das variáveis deste arquivo.
+
+   O tema é definido pelo atributo data-tema no <html>
+   ("claro" ou "escuro"), que o JS/tema-toggle.js controla:
+
+     1. se o visitante clicou no botão de tema, vale a escolha dele
+        (fica salva no navegador);
+     2. senão, segue o tema do sistema (claro/escuro) e acompanha
+        quando o sistema mudar;
+     3. sem JavaScript, o site abre no tema escuro.
+
+   Para ajustar a cor do vídeo de fundo, veja o bloco "VÍDEO DE FUNDO"
+   de cada tema.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   TEMA ESCURO (original)
+   ------------------------------------------------------------ */
+:root,
+html[data-tema="escuro"]{
+  color-scheme: dark;
+
+  /* Fundos */
+  --fundo:          #2A2A2A;
+  --fundo-fim:      #201a2e;                     /* fim do degradê da seção Projetos */
+  --rodape-bg:      #201a2e;
+  --fundo-imagem:   #2A2A2A;                     /* atrás das imagens dos projetos */
+
+  /* Superfícies (cards, campos, painéis) */
+  --superficie:        rgba(255,255,255,0.05);
+  --superficie-forte:  rgba(255,255,255,0.09);
+  --painel-bg:         rgba(255,255,255,0.09);   /* menu mobile e modal */
+  --campo-bg:          rgba(255,255,255,0.06);
+  --realce:            rgba(255,255,255,0.08);   /* hover de links e fundo das tags */
+  --borda:             rgba(255,255,255,0.14);
+  --borda-hover:       rgba(255,255,255,0.30);
+  --overlay:           rgba(10,10,14,0.60);      /* escurece a página atrás do modal/menu */
+  --sombra:            rgba(0,0,0,0.40);
+  --sombra-suave:      rgba(0,0,0,0.25);
+
+  /* Texto */
+  --texto:         #ffffff;
+  --texto-corpo:   rgba(255,255,255,0.85);
+  --texto-suave:   rgba(255,255,255,0.75);
+
+  /* Header (fica sobre o vídeo) */
+  --header-bg:           rgba(23,23,23,0.70);
+  --header-texto:        rgba(240,240,240,0.85);
+  --header-texto-forte:  #ffffff;
+  --sombra-texto:        0 1px 3px rgba(0,0,0,0.55), 0 0 18px rgba(0,0,0,0.3);
+
+  /* Card de vidro do hero */
+  --vidro-bg:            rgba(245,245,248,0.397);
+  --vidro-borda:         rgba(255,255,255,0.40);
+  --hero-texto:          #2A2A2A;
+  --hero-texto-suave:    rgba(42,42,42,0.60);
+  --hero-texto-corpo:    rgba(42,42,42,0.85);
+  --hero-texto-dica:     rgba(42,42,42,0.75);
+  --nome-vertical-cor:   rgba(255,255,255,0.92);   /* bem claro sobre o vídeo escuro */
+
+  /* Marca / botões */
+  --acento:         #443B6D;                     /* sublinhado do título */
+  --acento-claro:   #6b5f9c;                     /* ícones, foco */
+  --botao:          #443B6D;
+  --botao-hover:    #6b5f9c;
+  --botao-texto:    #ffffff;
+
+  /* Brilhos decorativos de fundo */
+  --brilho-servicos: rgba(107,95,156,0.35);
+  --brilho-projetos: rgba(68,59,109,0.40);
+  --brilho-rodape:   rgba(107,95,156,0.30);
+
+  /* ---------- VÍDEO DE FUNDO ---------- */
+  --video-tint-cor:        #443B6D;   /* cor aplicada por cima do vídeo */
+  --video-tint-opacidade:  0;         /* 0 = sem cor · 1 = cor sólida */
+  --video-tint-blend:      normal;    /* normal · multiply · color · overlay · soft-light · screen */
+  --video-filtro:          none;      /* ex.: grayscale(1) brightness(1.1) contrast(1.05) */
+  --scrim-topo:            rgba(10,10,14,0.55);   /* escurece o topo (legibilidade do header) */
+  --scrim-base:            rgba(10,10,14,0.45);   /* escurece a base */
+  --hero-veu:              linear-gradient(120deg, rgba(68,59,109,0.55) 0%, rgba(42,42,42,0.55) 50%, rgba(107,95,156,0.55) 100%);
+  --hero-fundo:            #2A2A2A;   /* cor enquanto o vídeo carrega */
+  --grain-opacidade:       0.22;
+}
+
+
+/* ------------------------------------------------------------
+   TEMA CLARO (off-white + texto preto)
+   ------------------------------------------------------------ */
+html[data-tema="claro"]{
+  color-scheme: light;
+
+  /* Fundos */
+  --fundo:          #F7F6F3;
+  --fundo-fim:      #EEECE7;
+  --rodape-bg:      #EEECE7;
+  --fundo-imagem:   #E4E2DD;
+
+  /* Superfícies */
+  --superficie:        rgba(255,255,255,0.70);
+  --superficie-forte:  rgba(255,255,255,0.95);
+  --painel-bg:         rgba(250,249,246,0.95);
+  --campo-bg:          #ffffff;
+  --realce:            rgba(17,17,17,0.06);
+  --borda:             rgba(17,17,17,0.10);
+  --borda-hover:       rgba(17,17,17,0.22);
+  --overlay:           rgba(17,17,17,0.45);
+  --sombra:            rgba(17,17,17,0.18);
+  --sombra-suave:      rgba(17,17,17,0.10);
+
+  /* Texto */
+  --texto:         #111111;
+  --texto-corpo:   rgba(17,17,17,0.82);
+  --texto-suave:   rgba(17,17,17,0.62);
+
+  /* Header */
+  --header-bg:           rgba(247,246,243,0.82);
+  --header-texto:        rgba(17,17,17,0.78);
+  --header-texto-forte:  #111111;
+  --sombra-texto:        none;
+
+  /* Card de vidro do hero */
+  --vidro-bg:            rgba(255,255,255,0.55);
+  --vidro-borda:         rgba(255,255,255,0.70);
+  --hero-texto:          #111111;
+  --hero-texto-suave:    rgba(17,17,17,0.55);
+  --hero-texto-corpo:    rgba(17,17,17,0.82);
+  --hero-texto-dica:     rgba(17,17,17,0.70);
+  --nome-vertical-cor:   rgba(68,59,109,0.85);     /* roxo da marca: destaque no tema claro */
+
+  /* Marca / botões */
+  --acento:         #443B6D;
+  --acento-claro:   #6b5f9c;
+  --botao:          #111111;
+  --botao-hover:    #3a3a3a;
+  --botao-texto:    #F7F6F3;
+
+  /* Brilhos decorativos de fundo */
+  --brilho-servicos: rgba(107,95,156,0.10);
+  --brilho-projetos: rgba(107,95,156,0.10);
+  --brilho-rodape:   rgba(107,95,156,0.10);
+
+  /* ---------- VÍDEO DE FUNDO ---------- */
+  --video-tint-cor:        #F7F6F3;
+  --video-tint-opacidade:  0.60;
+  --video-tint-blend:      normal;
+  --video-filtro:          none;
+  --scrim-topo:            rgba(247,246,243,0.65);
+  --scrim-base:            rgba(247,246,243,0.90);   /* a base do hero "derrete" no fundo da página */
+  --hero-veu:              linear-gradient(transparent, transparent);
+  --hero-fundo:            #EEECE7;
+  --grain-opacidade:       0.10;
+}
+
+
+/* Transição suave só durante a troca de tema (a classe é posta pelo JS por ~0,5s) */
+html.tema-trocando *,
+html.tema-trocando *::before,
+html.tema-trocando *::after{
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease, fill .35s ease !important;
+}
